@@ -1,6 +1,6 @@
 <template>
-  <div id="headersection">
-    <button @click="toggle" class="btn btn-success"><img src="../assets/header.png" id="headerButton"></button>
+  <div id="headerSection">
+    <button @click="toggle" class="btn"><img src="../assets/header.png" id="headerButton"></button>
     <Drawer @close="toggle" align="left" :closeable="true">
       <div v-if="open">
           <Menu />
@@ -13,7 +13,7 @@
 import Drawer from "vue-simple-drawer";
 
 export default {
-  name: 'heder',
+  name: 'Header',
   components: {
     Drawer
   },
@@ -30,15 +30,25 @@ export default {
 };
 </script>
 
-<style>
-#app {
+<style lang="scss" scoped>
+@import "~bootstrap/scss/bootstrap-reboot",
+"~bootstrap/scss/buttons";
+</style>
+
+<style scoped>
+
+#headerSection {
+  background-color: #F3F3F3;
+  width: 100%;
+  height: auto;
+}
+
+#headerButton {
   font-family: 'Avenir',Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  padding-top: 150px;
-  margin: 0 auto;
-  width: 800px;
+  width: 64px;
+  height: 64px;
 }
+  
 </style>
