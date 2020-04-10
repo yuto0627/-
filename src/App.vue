@@ -32,4 +32,7 @@ export default {
   }
 }
 </script>
-
+ 
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+</style>
