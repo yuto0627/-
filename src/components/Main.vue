@@ -1,24 +1,9 @@
 <template>
-<<<<<<< HEAD
     <div id="mainSection">
         <div id="userName">Yuto.Ishida</div>
         <div id="companyName">Seattleconsulting</div>
         <img src="../assets/profile.jpg" id="profilePicture">
-
-=======
-  <div id="mainSection">
-    <div id="userName">
-      Y.Ishida
     </div>
-    <div id="companyName">
-      Seattleconsulting
->>>>>>> 4cf9b47627e84c98a1c56a4e068a571d867e83ee
-    </div>
-    <img
-      id="profilePicture"
-      src="../assets/profile.jpg"
-    >
-  </div>
 </template>
 
 <script>
@@ -55,19 +40,11 @@ export default {
 }
 
 #profilePicture {
-<<<<<<< HEAD
     border-radius: 50%;
     width: 80px;
     height: 80px;
     display: block;
     margin: auto;
-=======
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  display: block;
-  margin: auto;
->>>>>>> 4cf9b47627e84c98a1c56a4e068a571d867e83ee
 }
 
 </style>
