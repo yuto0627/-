@@ -1,9 +1,21 @@
 <template>
   <div id="headerSection">
-    <button @click="toggle" class="btn"><img src="../assets/header.png" id="headerButton"></button>
-    <Drawer @close="toggle" align="left" :closeable="true">
+    <button
+      class="btn"
+      @click="toggle"
+    >
+      <img
+        id="headerButton"
+        src="../assets/header.png"
+      >
+    </button>
+    <Drawer
+      align="left"
+      :closeable="true"
+      @close="toggle"
+    >
       <div v-if="open">
-          <Menu />
+        <Menu />
       </div>
     </Drawer>
   </div>
@@ -33,23 +45,23 @@ export default {
 
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap-reboot",
-"~bootstrap/scss/buttons";
+  "~bootstrap/scss/buttons";
 </style>
 
 <style scoped>
 
 #headerSection {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   width: 100%;
   height: auto;
 }
 
 #headerButton {
-  font-family: 'Avenir',Helvetica,Arial,sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
 }
-  
+
 </style>
