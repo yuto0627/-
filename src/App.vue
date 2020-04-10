@@ -19,6 +19,8 @@ import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
 import Menu from './components/Menu.vue'
 
+
+
 export default {
   name: 'App' ,
   components: {

@@ -1,6 +1,6 @@
 <template>
     <div id="mainSection">
-        <div id="userName">Y.Ishida</div>
+        <div id="userName">Yuto.Ishida</div>
         <div id="companyName">Seattleconsulting</div>
         <img src="../assets/profile.jpg" id="profilePicture">
 
@@ -42,8 +42,8 @@ export default {
 
 #profilePicture {
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     display: block;
     margin: auto;
 }
