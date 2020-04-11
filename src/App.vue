@@ -19,6 +19,8 @@ import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
 import Menu from './components/Menu.vue'
 
+
+
 export default {
   name: 'App' ,
   components: {
@@ -32,4 +34,7 @@ export default {
   }
 }
 </script>
-
+ 
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+</style>
