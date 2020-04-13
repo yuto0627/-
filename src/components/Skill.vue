@@ -1,9 +1,23 @@
 <template>
-    <div id="skillSection">
-        <div id="skillTitle">Skill Set</div>
-        <div id="skillExplain">ああああああああ</div>
-        <div id="githuburl">GitHub：https://github.com/yuto0627</div>
+  <div id="skillSection">
+    <div id="skillTitle">
+      Skill Set
     </div>
+    <div id="skillExplain">
+      ああああああああ
+    </div>
+    <div id="skillLink">
+      GitHub：<a
+        href="http://github.com/yuto0627"
+        target="_blank"
+      >https://github.com/yuto0627</a>
+    </div>
+    <span id="skillCategories">
+      <li><a href="#">Font-end</a></li>
+      <li><a href="#">Back-end</a></li>
+      <li><a href="#">DevOps</a></li>
+    </span>
+  </div>
 </template>
 
 <script>
@@ -15,9 +29,10 @@ export default {
 <style scoped>
 
 #skillSection {
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 #skillTitle {
@@ -38,12 +53,20 @@ export default {
   text-align: center;
 }
 
-#GithubUrl {
+#skillLink {
   color: #20879f;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+}
+
+li {
+  display: inline;
+}
+
+#skillCategories {
+  color: crimson;
 }
 
 </style>
