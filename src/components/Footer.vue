@@ -22,7 +22,7 @@ export default {
     clickSmoothScroll () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#Header'),
+        document.querySelector('#headerSection'),
         400,
         null,
         null,
