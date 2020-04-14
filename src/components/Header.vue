@@ -16,16 +16,21 @@
         for="nav-input"
       />
       <div id="nav-content">
-        ここに中身を入れる
+        <Menu />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Menu from "../components/Menu.vue"
+
 export default {
   name: 'Header',
+  components: {
+    Menu
   }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -102,8 +107,8 @@ export default {
   left: 0;
   z-index: 9999;/* 最前面に */
   width: 90%;/* 右側に隙間を作る（閉じるカバーを表示） */
-  max-width: 330px;/* 最大幅（調整してください） */
-  height: 100%;
+  max-width: 200px;/* 最大幅（調整してください） */
+  height: 400px;
   background: #fff;/* 背景色 */
   transition: 0.3s ease-in-out;/* 滑らかに表示 */
   -webkit-transform: translateX(-105%);
