@@ -11,7 +11,7 @@ export default {
         datasets: [
           {
             label: 'Front-end',
-            data: [3,3,3,2,4],
+            data: [4,3,3,2,4],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
             ],

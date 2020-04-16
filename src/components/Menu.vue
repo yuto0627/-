@@ -9,28 +9,28 @@
     <div>
       <ul id="drawerMenu">
         <h1>Menu</h1>
-        <li>
+        <li @click="closeMenu">
           <a
-            href="#"
-            @click="Top()"
+            href="#headerSection"
+            @click="clickSmoothScroll()"
           >Home</a>
         </li>
-        <li>
+        <li @click="closeMenu">
           <a
-            href="#"
-            @click="About()"
+            href="#aboutSection"
+            @click="clickSmoothScroll()"
           >About Me</a>
         </li>
-        <li>
+        <li @click="closeMenu">
           <a
-            href="#"
-            @click="Skill()"
+            href="#skillSection"
+            @click="clickSmoothScroll()"
           >Skill Set</a>
         </li>
-        <li>
+        <li @click="closeMenu">
           <a
-            href="#"
-            @click="Vision()"
+            href="#visionSection"
+            @click="clickSmoothScroll()"
           >Vision</a>
         </li>
       </ul>
@@ -41,40 +41,13 @@
 <script>
 export default {
     methods: {
-    Top () {
+      closeMenu() {
+        this.$emit('close')
+      },
+    clickSmoothScroll () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#headerSection'),
-        400,
-        null,
-        null,
-        'y'
-      )
-    },
-    About () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#aboutSection'),
-        400,
-        null,
-        null,
-        'y'
-      )
-    },
-    Skill () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#skillSection'),
-        400,
-        null,
-        null,
-        'y'
-      )
-    },
-    Vision () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#visionSection'),
+        document.querySelector('#app'),
         400,
         null,
         null,
@@ -100,6 +73,7 @@ export default {
 h1 {
   font-weight: bold;
   text-align: center;
+  color: #fff;
 }
 
 li {
@@ -108,25 +82,18 @@ li {
 
 li a {
   display: block;
-  border-left: 8px solid #474655;
-  border-top: 1px solid #474655;
-  border-right: 1px solid #474655;
-  border-bottom: 1px solid #474655;
-  background-color: #fff;
-  padding: 3px 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  font-size: 24px;
+  border-bottom: 2px solid #fff;
+  position: relative;
   text-decoration: none;
-  color: #333;
-  width: 150px;
-  margin: 1px 0;
-  text-align: left;
-  font-size: 20px;
+  top: 10px;
+  padding: 10px;
 }
 
 li a:hover {
-  border-left: 8px solid #474655;
-  border-top: 1px solid #474655;
-  border-right: 1px solid #474655;
-  border-bottom: 1px solid #474655;
-  background-color: #d7efd7;
+  background-color: #474655;
 }
 </style>
