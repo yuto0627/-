@@ -59,7 +59,7 @@ export default {
 #nav-open {
   display: inline-block;
   width: 30px;
-  height: 22px;
+  height: 30px;
   vertical-align: middle;
 }
 
@@ -108,7 +108,7 @@ export default {
   z-index: 9999;/* 最前面に */
   width: 90%;/* 右側に隙間を作る（閉じるカバーを表示） */
   max-width: 200px;/* 最大幅（調整してください） */
-  height: 400px;
+  height: 500px;
   background: #fff;/* 背景色 */
   transition: 0.3s ease-in-out;/* 滑らかに表示 */
   -webkit-transform: translateX(-105%);

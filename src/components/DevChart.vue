@@ -2,21 +2,21 @@
 import { Radar } from 'vue-chartjs';
 
 export default {
-  name: 'BackChart',
+  name: 'DevChart',
   extends: Radar,
   data () {
     return {
       data: {
-        labels: ['Java', 'Ruby', 'RubyOnRails', 'MySQL'],
+        labels: ['Linux', 'Git', 'GitHub', 'Firebase'],
         datasets: [
           {
-            label: 'Back-end',
-            data: [1,1,1,1],
+            label: 'DevOps',
+            data: [1,2,3,4,5],
             backgroundColor: [
-              'rgba(15,136,57,0.2)',
+              'rgba(87,16,131,0.2)',
             ],
             borderColor: [
-              'rgba(15, 136, 57, 1)',
+              'rgba(87,16,131,1)',
               'rgba(54, 162, 235, 1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',

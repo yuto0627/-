@@ -12,23 +12,33 @@
         target="_blank"
       >https://github.com/yuto0627</a>
     </div>
-    <span id="skillCategories">
-      <li><a
-        id="front"
-        href="#"
-        rel="noopener noreferrer"
-      >Font-end</a></li>
-      <li><a
-        id="back"
-        href="#"
-      >Back-end</a></li>
-      <li><a
-        id="DevOps"
-        href="#"
-      >DevOps</a></li>
-    </span>
+    <div id="skillCategories">
+      <ul>
+        <li>
+          <span
+            id="front"
+            @click="setCurrentChart('front')"
+          >Font-end</span>
+        </li>
+        <li>
+          <span
+            id="back"
+            @click="setCurrentChart('back')"
+          >Back-end</span>
+        </li>
+        <li>
+          <span
+            id="DevOps"
+            @click="setCurrentChart('devOps')"
+          >DevOps</span>
+        </li>
+      </ul>
+    </div>
     <div id="skillList">
-      <ul id="front-end">
+      <ul
+        id="front-end"
+        :class="{'front-change': isFrontActive}"
+      >
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>
@@ -37,45 +47,68 @@
       </ul>
       <ul
         id="back-end"
-        :class="{'back-change': backChange}"
+        :class="{'back-change': isBackActive}"
       >
         <li>Java</li>
         <li>Ruby</li>
         <li>RubyOnRails</li>
         <li>MySQL</li>
       </ul>
-      <ul id="devops">
+      <ul
+        id="devops"
+        :class="{'dev-change': isDevOpsActive}"
+      >
         <li>Linux</li>
         <li>Git</li>
         <li>GitHub</li>
         <li>Firebase</li>
       </ul>
     </div>
-    <div v-if="frontChange">
-      <FrontChart />
+    <div id="skillGraph">
+      <div v-if="isFrontActive">
+        <FrontChart />
+      </div>
+      <div v-if="isBackActive">
+        <BackChart />
+      </div>
+      <div v-if="isDevOpsActive">
+        <DevChart />
+      </div>
     </div>
-    <div v-if="backChange">
-      <BackChart />
-    </div>
-    <div v-if="devChange" />
   </div>
 </template>
 
 <script>
 import FrontChart from '../components/FrontChart.vue';
 import BackChart from '../components/BackChart.vue';
+import DevChart from '../components/DevChart.vue';
 
 export default {
     name: 'Skill',
     components: {
       FrontChart,
-      BackChart
+      BackChart,
+      DevChart
   },
   data(){
     return {
-      frontChange: true,
-      backChange: false,
-      devChange: false
+      currentChart: 'front'
+    }
+  },
+  computed: {
+    isFrontActive() {
+      return this.currentChart=='front';
+    },
+    isBackActive() {
+      return this.currentChart=='back';
+    },
+    isDevOpsActive() {
+      return this.currentChart=='devOps';
+    }
+  },
+  method: {
+    setCurrentChart(chart) {
+      this.currentChart = chart;
     }
   }
 }
@@ -114,6 +147,7 @@ export default {
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+  padding: 0 0 30px 0;
 }
 
 li {
@@ -125,8 +159,10 @@ li {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
   display: inline-block;
-  padding-right: 1em;
   text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 #back {
@@ -135,14 +171,19 @@ li {
   font-weight: bold;
   display: inline-block;
   text-decoration: none;
+  padding: 5px 0 5px 0;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 #DevOps {
   color: #571083;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
-  padding-left: 1em;
   text-decoration: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 #front:hover {
@@ -162,8 +203,8 @@ li {
   color: rgba(181, 26, 26, 1, 75);
   height: 30px;
   font-weight: bold;
-  padding: 12px 20px 2px 20px;
-  box-shadow: 0 0 8px gray;
+  padding: 8px 15px 2px 15px;
+  box-shadow: 0 0 10px gray;
 }
 
 #back-end li {
@@ -171,8 +212,8 @@ li {
   color: rgba(15, 136, 57, 1, 75);
   height: 30px;
   font-weight: bold;
-  padding: 12px 20px 2px 20px;
-  box-shadow: 0 0 8px gray;
+  padding: 8px 15px 2px 15px;
+  box-shadow: 0 0 10px gray;
 }
 
 #devops li {
@@ -180,7 +221,25 @@ li {
   color: rgba(87, 16, 131, 1, 75);
   height: 30px;
   font-weight: bold;
-  padding: 12px 20px 2px 20px;
-  box-shadow: 0 0 8px gray;
+  padding: 8px 15px 2px 15px;
+  box-shadow: 0 0 10px gray;
+}
+
+#front-change li {
+  background-color: rgba(255, 99, 132, 0.8);
+}
+
+#back-change li {
+  background-color: rgba(15, 136, 57, 0.8);
+}
+
+#dev-change li {
+  background-color: rgba(127, 73, 161, 0.8);
+}
+
+#skillGraph {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

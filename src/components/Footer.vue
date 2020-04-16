@@ -47,15 +47,15 @@ export default {
   color: #fff;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   text-shadow: 2px 2px 8px #000;
-  padding: 20px 50px;
+  padding: 30px 50px;
 }
 
 #footerScroll {
   border-radius: 50%;
   position: relative;
-  top: -65px;
+  top: -85px;
   width: 30px;
 }
 

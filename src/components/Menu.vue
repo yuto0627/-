@@ -1,5 +1,11 @@
 <template>
   <div id="drawerSection">
+    <label for="nav-input">
+      <img
+        id="drawerButton"
+        src="../assets/close.png"
+      >
+    </label>
     <div>
       <ul id="drawerMenu">
         <h1>Menu</h1>
@@ -85,8 +91,14 @@ export default {
   padding: 15px;
 }
 
+#drawerButton {
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 160px;
+}
+
 h1 {
-  font: bold;
+  font-weight: bold;
   text-align: center;
 }
 
