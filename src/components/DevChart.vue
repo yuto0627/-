@@ -7,11 +7,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Linux', 'Git', 'GitHub', 'Firebase'],
+        labels: ['Linux', 'Node' , 'Git', 'GitHub', 'Firebase'],
         datasets: [
           {
             label: 'DevOps',
-            data: [1,2,3,4,5],
+            data: [4,2,3,3,3,],
             backgroundColor: [
               'rgba(87,16,131,0.2)',
             ],

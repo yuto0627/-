@@ -49,13 +49,13 @@ export default {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 2px 2px 8px #000;
-  padding: 30px 50px;
+  padding: 30px 50px 0 50px;
 }
 
 #footerScroll {
   border-radius: 50%;
   position: relative;
-  top: -85px;
+  top: -55px;
   width: 30px;
 }
 

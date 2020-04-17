@@ -3,6 +3,7 @@
     <div id="nav-drawer">
       <input
         id="nav-input"
+        v-model="checked"
         type="checkbox"
         class="nav-unshown"
       >
@@ -16,7 +17,8 @@
         for="nav-input"
       />
       <div id="nav-content">
-        <Menu />
+        <span id="lineSpan" />
+        <Menu @close="closeMenuEvent" />
       </div>
     </div>
   </div>
@@ -29,6 +31,16 @@ export default {
   name: 'Header',
   components: {
     Menu
+  },
+  data() {
+    return {
+      checked:false
+    }
+  },
+  methods:{
+    closeMenuEvent() {
+      this.checked=false
+    }
   }
 }
 </script>
@@ -109,7 +121,7 @@ export default {
   width: 90%;/* 右側に隙間を作る（閉じるカバーを表示） */
   max-width: 200px;/* 最大幅（調整してください） */
   height: 500px;
-  background: #fff;/* 背景色 */
+  background-color: rgba(71, 70, 85, 0.8);/* 背景色 */
   transition: 0.3s ease-in-out;/* 滑らかに表示 */
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);/* 左に隠しておく */

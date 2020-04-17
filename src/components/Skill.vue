@@ -4,7 +4,11 @@
       Skill Set
     </div>
     <div id="skillExplain">
-      ああああああああ
+      スキルについてまとめました。
+      研修を通してフロント側のスキルはポートフォリオの実装で力がつきました。
+      IT技術者としては０からのスタートであるため、まだまだ知識が足りていませんが
+      まずはフロント側からバック側まで広く浅く学び、スキルを身につけていき、
+      その後専門性を高めていきたいと考えています。
     </div>
     <div id="skillLink">
       GitHub：<a
@@ -59,6 +63,7 @@
         :class="{'dev-change': isDevOpsActive}"
       >
         <li>Linux</li>
+        <li>Node</li>
         <li>Git</li>
         <li>GitHub</li>
         <li>Firebase</li>
@@ -106,7 +111,7 @@ export default {
       return this.currentChart=='devOps';
     }
   },
-  method: {
+  methods: {
     setCurrentChart(chart) {
       this.currentChart = chart;
     }
@@ -121,13 +126,14 @@ export default {
   width: 100%;
   height: auto;
   text-align: center;
+  padding: 10px 0;
 }
 
 #skillTitle {
   color: #20879f;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   text-shadow: 2px 2px 6px;
   text-align: center;
 }
@@ -145,13 +151,13 @@ export default {
   color: #20879f;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
-  padding: 0 0 30px 0;
+  padding: 15px 0 10px 0;
 }
 
 li {
-  display: inline;
+  display: inline-block;
 }
 
 #front {
@@ -161,7 +167,7 @@ li {
   display: inline-block;
   text-decoration: none;
   padding: 5px 10px 5px 10px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -172,7 +178,7 @@ li {
   display: inline-block;
   text-decoration: none;
   padding: 5px 0 5px 0;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -182,7 +188,7 @@ li {
   font-weight: bold;
   text-decoration: none;
   padding: 5px 10px 5px 10px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -198,6 +204,18 @@ li {
   text-decoration: underline;
 }
 
+.front-change li {
+  background-color: rgba(221, 51, 88, 0.8);
+}
+
+.back-change li {
+  background-color: rgba(15, 136, 57, 0.8);
+}
+
+.dev-change li {
+  background-color: rgba(127, 73, 161, 0.8);
+}
+
 #front-end li {
   display: inline-block;
   color: rgba(181, 26, 26, 1, 75);
@@ -205,6 +223,7 @@ li {
   font-weight: bold;
   padding: 8px 15px 2px 15px;
   box-shadow: 0 0 10px gray;
+  margin: 0 5px;
 }
 
 #back-end li {
@@ -214,6 +233,7 @@ li {
   font-weight: bold;
   padding: 8px 15px 2px 15px;
   box-shadow: 0 0 10px gray;
+  margin: 0 5px;
 }
 
 #devops li {
@@ -223,18 +243,7 @@ li {
   font-weight: bold;
   padding: 8px 15px 2px 15px;
   box-shadow: 0 0 10px gray;
-}
-
-#front-change li {
-  background-color: rgba(255, 99, 132, 0.8);
-}
-
-#back-change li {
-  background-color: rgba(15, 136, 57, 0.8);
-}
-
-#dev-change li {
-  background-color: rgba(127, 73, 161, 0.8);
+  margin: 0 5px;
 }
 
 #skillGraph {
