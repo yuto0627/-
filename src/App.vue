@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <p>{{ chart }}</p>
+    <Skill />
     <Header />
     <Main />
     <About />
@@ -20,7 +22,7 @@ import Footer from './components/Footer.vue'
 
 
 export default {
-  name: 'App' ,
+  name: 'App',
   components: {
     Header,
     Main,
@@ -29,7 +31,38 @@ export default {
     Vision,
     Footer,
   },
+  data() {
+    return {
+      skills: []
+    }
+  },
+  computed: {
+    chart(){
+      return this.$store.getters.chart
+    }
+  },
+  mounted() {
+    this.getSkills();
+  },
   methods: {
+    getSkills() {
+      // dataのスキルを初期化する
+      this.skills = [];
+      // this.skillsを一時変数のitemsに参照コピーする
+      let items = this.skills;
+      // axios.getを用いてデプロイ済のfunctionにアクセスする
+      this.axios.get('https://us-central1-portfolio-4f0fc.cloudfunctions.net/skills')
+        .then((response) => {
+          response.data.forEach(function(skill) {
+            // 取得したデータを１件ずつ配列に設定する
+            items.push(skill);
+          })
+        })
+        .catch((e) => {
+          alert(e);
+        });
+    console.log(items)
+    },
     clickSmoothScroll () {
       event.preventDefault()
       this.$SmoothScroll(
