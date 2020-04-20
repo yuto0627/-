@@ -12,6 +12,7 @@
     </div>
     <div id="skillLink">
       GitHub：<a
+        id="gitHubLink"
         href="http://github.com/yuto0627"
         target="_blank"
       >https://github.com/yuto0627</a>
@@ -154,6 +155,12 @@ export default {
   font-size: 18px;
   text-align: center;
   padding: 15px 0 10px 0;
+}
+
+#gitHubLink {
+  color: #20879f;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 li {

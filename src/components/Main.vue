@@ -50,8 +50,8 @@ export default {
 
 #profilePicture {
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   display: block;
   margin: auto;
   padding: 0 0 10px 0;
