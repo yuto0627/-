@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <p>{{ chart }}</p>
-    <Skill />
     <Header />
     <Main />
     <About />
     <Skill />
+    <input
+      type="text"
+      :value="skillCategories"
+      @input="updateSkillCategories"
+    >
     <Vision />
     <Footer />
   </div>
@@ -18,6 +21,8 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
+import { mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 
 
 
@@ -37,14 +42,22 @@ export default {
     }
   },
   computed: {
-    chart(){
-      return this.$store.getters.chart
-    }
+    skillCategories(){
+      return this.$store.getters.skillCategories
+    },
+    ...mapGetters({
+      get: 'getSkills',
+    }),
   },
   mounted() {
-    this.getSkills();
+    this.updateSkillCategories();
   },
   methods: {
+    updateSkillCategories(event){
+      this.$store.dispatch('updateSkillCategories',event.target.value)
+    },
+    ...mapActions(['updateSkillCategories']),
+
     getSkills() {
       // dataのスキルを初期化する
       this.skills = [];
