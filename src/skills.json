@@ -1,5 +1,5 @@
 {
-  "skill-categories": [ {
+  "skillCategories": [ {
       "category": "front-end",
       "skills": [ {
         "name" : "HTML",
@@ -36,7 +36,7 @@
         "score": 4
       },{
         "name" : "Node",
-        "score":2
+        "score": 2
       },{
         "name" : "Git",
         "score" : 3
