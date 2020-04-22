@@ -14,8 +14,10 @@ export default new Vuex.Store({
 
   getters:{
     getSkills: (state) => (category) => {
-      if (state.skillCategories.lengh > 0) {
-        return state.skillCategories.find((skill) => skill.category === category);
+      /* eslint-disable no-debugger */
+      debugger
+      if(state.skillCategories.length > 0) {
+        return state.skillCategories.find((skill) => skill.category===category);
       }
       return [];
      },
@@ -37,6 +39,6 @@ export default new Vuex.Store({
       });
       commit('setSkillCategories',{skillCategories});
     }
- }
+  }
 })
 

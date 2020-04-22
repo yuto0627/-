@@ -54,7 +54,7 @@ export default {
     ...mapActions(['updateSkillCategories']),
 
     getSkill() {
-      this.get(this.categoy);
+      this.get(this.category);
     },
 
     async test() {

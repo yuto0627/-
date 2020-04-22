@@ -7,11 +7,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Java', 'Ruby', 'RubyOnRails', 'MySQL'],
+        labels: [],
         datasets: [
           {
             label: 'Back-end',
-            data: [2,2,2,1],
+            data: [],
             backgroundColor: [
               'rgba(15,136,57,0.2)',
             ],

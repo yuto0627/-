@@ -45,6 +45,8 @@ export default {
   methods: {
     getSkills(){
       const frontSkillInfo = this.$store.getters.getSkills('front-end')
+      /* eslint-disable no-debugger */
+      debugger
       frontSkillInfo.skills.forEach((skill) => {
         this.data.labels.push(skill.name)
         this.data.datasets[0].data.push(skill.score)
