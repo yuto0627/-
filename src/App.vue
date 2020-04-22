@@ -16,8 +16,8 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
-import { mapGetters } from 'vuex'
-import { mapActions } from 'vuex'
+import { mapGetters,mapActions} from 'vuex'
+
 
 
 
@@ -60,18 +60,6 @@ export default {
     async test() {
       return await this.updateSkillCategories();
     },
-
-
-    clickSmoothScroll () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#Header'),
-        400,
-        null,
-        null,
-        'y'
-      )
-    }
   }
 }
 </script>

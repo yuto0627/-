@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 Vue.use(Vuex)
-Vue.use(axios)
 
 export default new Vuex.Store({
 
@@ -16,7 +15,7 @@ export default new Vuex.Store({
   getters:{
     getSkills: (state) => (category) => {
       if (state.skillCategories.lengh > 0) {
-        return state.skillCategories.find((skill) => skill.category===category);
+        return state.skillCategories.find((skill) => skill.category === category);
       }
       return [];
      },
