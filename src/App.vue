@@ -33,25 +33,33 @@ export default {
   },
   data() {
     return {
-      skills: []
+      category: 'front-end',
     }
   },
   computed: {
-    skillCategories(){
-      return this.$store.getters.skillCategories
-    },
     ...mapGetters({
       get: 'getSkills',
     }),
   },
-  mounted() {
+
+  mounted(){
+    this.$store.dispatch('updateSkillCategories')
+  },
+
+  created() {
     this.updateSkillCategories();
   },
+
   methods: {
-    updateSkillCategories(event){
-      this.$store.dispatch('updateSkillCategories',event.target.value)
-    },
     ...mapActions(['updateSkillCategories']),
+
+    getSkill() {
+      this.get(this.categoy);
+    },
+
+    async test() {
+      return await this.updateSkillCategories();
+    },
 
 
     clickSmoothScroll () {

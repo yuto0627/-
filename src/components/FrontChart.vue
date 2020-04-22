@@ -7,11 +7,11 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS', 'Vue',],
+        labels: [],
         datasets: [
           {
-            label: 'Front-end',
-            data: [4,3,3,2,4],
+            label: 'front-end',
+            data: [],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
             ],
@@ -39,8 +39,19 @@ export default {
     }
   },
   mounted () {
+    this.getSkills()
     this.renderChart(this.data, this.options)
+  },
+  methods: {
+    getSkills(){
+      const frontSkillInfo = this.$store.getters.getSkills('front-end')
+      frontSkillInfo.skills.forEach((skill) => {
+        this.data.labels.push(skill.name)
+        this.data.datasets[0].data.push(skill.score)
+      })
+    }
   }
+
 }
 </script>
 
