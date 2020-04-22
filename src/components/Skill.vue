@@ -83,11 +83,6 @@
         </div>
       </div>
     </div>
-    <input
-      type="text"
-      :value="message"
-      @input="doUpdate"
-    >
   </div>
 </template>
 
@@ -118,14 +113,8 @@ export default {
     isDevOpsActive() {
       return this.currentChart=='devOps';
     },
-    message(){
-      return this.$store.getters.message
-    }
   },
   methods: {
-    doUpdate(event){
-      this.$store.dispatch('doUpdate',event.target.value)
-    },
     setCurrentChart(chart) {
       this.currentChart = chart;
     }
