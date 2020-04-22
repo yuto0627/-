@@ -72,7 +72,7 @@
         </ul>
       </div>
       <div id="skillGraph">
-        <div v-if="isFrontActive">
+        <div v-if="isFrontActive && loaded">
           <FrontChart />
         </div>
         <div v-if="isBackActive">
@@ -113,6 +113,9 @@ export default {
     isDevOpsActive() {
       return this.currentChart=='devOps';
     },
+    loaded() {
+      return this.$store.state.loaded
+    }
   },
   methods: {
     setCurrentChart(chart) {

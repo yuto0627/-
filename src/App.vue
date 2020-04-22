@@ -16,8 +16,8 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
-import { mapGetters } from 'vuex'
-import { mapActions } from 'vuex'
+import { mapGetters,mapActions} from 'vuex'
+
 
 
 
@@ -33,37 +33,33 @@ export default {
   },
   data() {
     return {
-      skills: []
+      category: 'front-end',
     }
   },
   computed: {
-    skillCategories(){
-      return this.$store.getters.skillCategories
-    },
     ...mapGetters({
       get: 'getSkills',
     }),
   },
-  mounted() {
+
+  mounted(){
+    this.$store.dispatch('updateSkillCategories')
+  },
+
+  created() {
     this.updateSkillCategories();
   },
+
   methods: {
-    updateSkillCategories(event){
-      this.$store.dispatch('updateSkillCategories',event.target.value)
-    },
     ...mapActions(['updateSkillCategories']),
 
+    getSkill() {
+      this.get(this.category);
+    },
 
-    clickSmoothScroll () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#Header'),
-        400,
-        null,
-        null,
-        'y'
-      )
-    }
+    async test() {
+      return await this.updateSkillCategories();
+    },
   }
 }
 </script>
