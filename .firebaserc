@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "yutoishida-92d5f"
+  },
+  "targets": {
+    "yutoishida-92d5f": {
+      "hosting": {
+        "portfolio": [
+          "yutoishida-92d5f"
+        ]
+      }
+    },
+    "devportfolio-b7c43": {
+      "hosting": {
+        "portfolio": [
+          "devportfolio-b7c43"
+        ]
+      }
+    }
   }
 }
