@@ -16,11 +16,13 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
+import { mapGetters,mapActions} from 'vuex'
+
 
 
 
 export default {
-  name: 'App' ,
+  name: 'App',
   components: {
     Header,
     Main,
@@ -29,17 +31,35 @@ export default {
     Vision,
     Footer,
   },
-  methods: {
-    clickSmoothScroll () {
-      event.preventDefault()
-      this.$SmoothScroll(
-        document.querySelector('#Header'),
-        400,
-        null,
-        null,
-        'y'
-      )
+  data() {
+    return {
+      category: 'front-end',
     }
+  },
+  computed: {
+    ...mapGetters({
+      get: 'getSkills',
+    }),
+  },
+
+  mounted(){
+    this.$store.dispatch('updateSkillCategories')
+  },
+
+  created() {
+    this.updateSkillCategories();
+  },
+
+  methods: {
+    ...mapActions(['updateSkillCategories']),
+
+    getSkill() {
+      this.get(this.category);
+    },
+
+    async test() {
+      return await this.updateSkillCategories();
+    },
   }
 }
 </script>

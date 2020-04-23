@@ -1,83 +1,86 @@
 <template>
-  <div id="skillSection">
-    <div id="skillTitle">
-      Skill Set
-    </div>
-    <div id="skillExplain">
-      スキルについてまとめました。
-      研修を通してフロント側のスキルはポートフォリオの実装で力がつきました。
-      IT技術者としては０からのスタートであるため、まだまだ知識が足りていませんが
-      まずはフロント側からバック側まで広く浅く学び、スキルを身につけていき、
-      その後専門性を高めていきたいと考えています。
-    </div>
-    <div id="skillLink">
-      GitHub：<a
-        href="http://github.com/yuto0627"
-        target="_blank"
-      >https://github.com/yuto0627</a>
-    </div>
-    <div id="skillCategories">
-      <ul>
-        <li>
-          <span
-            id="front"
-            @click="setCurrentChart('front')"
-          >Font-end</span>
-        </li>
-        <li>
-          <span
-            id="back"
-            @click="setCurrentChart('back')"
-          >Back-end</span>
-        </li>
-        <li>
-          <span
-            id="DevOps"
-            @click="setCurrentChart('devOps')"
-          >DevOps</span>
-        </li>
-      </ul>
-    </div>
-    <div id="skillList">
-      <ul
-        id="front-end"
-        :class="{'front-change': isFrontActive}"
-      >
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>SCSS</li>
-        <li>Vue</li>
-      </ul>
-      <ul
-        id="back-end"
-        :class="{'back-change': isBackActive}"
-      >
-        <li>Java</li>
-        <li>Ruby</li>
-        <li>RubyOnRails</li>
-        <li>MySQL</li>
-      </ul>
-      <ul
-        id="devops"
-        :class="{'dev-change': isDevOpsActive}"
-      >
-        <li>Linux</li>
-        <li>Node</li>
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>Firebase</li>
-      </ul>
-    </div>
-    <div id="skillGraph">
-      <div v-if="isFrontActive">
-        <FrontChart />
+  <div>
+    <div id="skillSection">
+      <div id="skillTitle">
+        Skill Set
       </div>
-      <div v-if="isBackActive">
-        <BackChart />
+      <div id="skillExplain">
+        スキルについてまとめました。
+        研修を通してフロント側のスキルはポートフォリオの実装で力がつきました。
+        IT技術者としては０からのスタートであるため、まだまだ知識が足りていませんが
+        まずはフロント側からバック側まで広く浅く学び、スキルを身につけていき、
+        その後専門性を高めていきたいと考えています。
       </div>
-      <div v-if="isDevOpsActive">
-        <DevChart />
+      <div id="skillLink">
+        GitHub：<a
+          id="gitHubLink"
+          href="http://github.com/yuto0627"
+          target="_blank"
+        >https://github.com/yuto0627</a>
+      </div>
+      <div id="skillCategories">
+        <ul>
+          <li>
+            <span
+              id="front"
+              @click="setCurrentChart('front')"
+            >Font-end</span>
+          </li>
+          <li>
+            <span
+              id="back"
+              @click="setCurrentChart('back')"
+            >Back-end</span>
+          </li>
+          <li>
+            <span
+              id="DevOps"
+              @click="setCurrentChart('devOps')"
+            >DevOps</span>
+          </li>
+        </ul>
+      </div>
+      <div id="skillList">
+        <ul
+          id="front-end"
+          :class="{'front-change': isFrontActive}"
+        >
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>SCSS</li>
+          <li>Vue</li>
+        </ul>
+        <ul
+          id="back-end"
+          :class="{'back-change': isBackActive}"
+        >
+          <li>Java</li>
+          <li>Ruby</li>
+          <li>RubyOnRails</li>
+          <li>MySQL</li>
+        </ul>
+        <ul
+          id="devops"
+          :class="{'dev-change': isDevOpsActive}"
+        >
+          <li>Linux</li>
+          <li>Node</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
+      <div id="skillGraph">
+        <div v-if="isFrontActive && loaded">
+          <FrontChart />
+        </div>
+        <div v-if="isBackActive">
+          <BackChart />
+        </div>
+        <div v-if="isDevOpsActive">
+          <DevChart />
+        </div>
       </div>
     </div>
   </div>
@@ -109,6 +112,9 @@ export default {
     },
     isDevOpsActive() {
       return this.currentChart=='devOps';
+    },
+    loaded() {
+      return this.$store.state.loaded
     }
   },
   methods: {
@@ -154,6 +160,12 @@ export default {
   font-size: 18px;
   text-align: center;
   padding: 15px 0 10px 0;
+}
+
+#gitHubLink {
+  color: #20879f;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 li {
