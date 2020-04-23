@@ -26,6 +26,9 @@
         "name" : "Ruby",
         "score": 2
       },{
+        "name" : "RubyOnRails",
+        "score": 2
+      },{
         "name" : "MySQL",
         "score": 1
       }]
